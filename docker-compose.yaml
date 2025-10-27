@@ -5,7 +5,7 @@ services:
       context: ./demo/frontend
       dockerfile: frontend.Dockerfile
     ports:
-      - 7262:80
+      - "0.0.0.0:7262:80"
 
   backend:
     image: sam2/backend
@@ -13,7 +13,7 @@ services:
       context: .
       dockerfile: backend.Dockerfile
     ports:
-      - 7263:5000
+      - "0.0.0.0:7263:5000"
     volumes:
       - ./demo/data/:/data/:rw
     environment:
